@@ -4,7 +4,8 @@ function UserList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("https://student-json-api.netlify.app/db.json")
+    fetch("https://corsproxy.io/?https://student-json-api.netlify.app/db.json")
+
       .then(res => res.json())
       .then(data => setStudents(data.students))
       .catch(err => console.error("Error loading data:", err));
