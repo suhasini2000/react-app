@@ -5,11 +5,12 @@ function UserList() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/students.json")
-      .then(res => res.json())
-      .then(data => setStudents(data.students || []))
-      .catch(() => setError("Failed to load students"));
-  }, []);
+  fetch("https://corsproxy.io/?https://tudent-json-api.netlify.app/db.json")
+    .then(res => res.json())
+    .then(data => setStudents(data.students || []))
+    .catch(() => setError("Failed to load students."));
+}, []);
+
 
   return (
     <div>
